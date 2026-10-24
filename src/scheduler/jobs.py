@@ -1,4 +1,12 @@
 """Background job scheduler for deadline monitoring and risk alerts."""
+import sys
+from pathlib import Path
+
+# Ensure project root is on sys.path
+_ROOT = Path(__file__).resolve().parent.parent.parent
+if str(_ROOT) not in sys.path:
+    sys.path.insert(0, str(_ROOT))
+
 import logging
 from datetime import datetime, timezone
 from apscheduler.schedulers.background import BackgroundScheduler

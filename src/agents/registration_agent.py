@@ -1,6 +1,14 @@
 """Registration Agent for EventPilot AI.
 Enforces capacity quotas, waitlist ordering, duplicate rejection, and QR token issuance.
 """
+import sys
+from pathlib import Path
+
+# Ensure project root is on sys.path
+_ROOT = Path(__file__).resolve().parent.parent.parent
+if str(_ROOT) not in sys.path:
+    sys.path.insert(0, str(_ROOT))
+
 from datetime import datetime, timezone
 from typing import Optional
 from uagents import Agent, Context, Protocol

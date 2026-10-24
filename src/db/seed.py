@@ -2,6 +2,14 @@
 Seeds users, inventory items (specifically the 40 available Robotics Hardware Kits),
 and historical metrics for demo runs.
 """
+import sys
+from pathlib import Path
+
+# Ensure project root is on sys.path
+_ROOT = Path(__file__).resolve().parent.parent.parent
+if str(_ROOT) not in sys.path:
+    sys.path.insert(0, str(_ROOT))
+
 import logging
 from datetime import datetime, timezone, timedelta
 from src.db.session import SessionLocal, init_db

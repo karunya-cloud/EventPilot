@@ -2,6 +2,14 @@
 Implements the official Fetch.ai Agent Chat Protocol (ACP v0.3.0).
 Coordinates specialized agents and provides stateful conversational orchestration for ASI.
 """
+import sys
+from pathlib import Path
+
+# Ensure project root is on sys.path
+_ROOT = Path(__file__).resolve().parent.parent.parent
+if str(_ROOT) not in sys.path:
+    sys.path.insert(0, str(_ROOT))
+
 from datetime import datetime, timezone, timedelta
 import logging
 from typing import Dict, Any, Optional

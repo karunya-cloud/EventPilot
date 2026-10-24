@@ -1,6 +1,14 @@
 """Logistics Agent for EventPilot AI.
 Monitors inventory availability, venue readiness, and budget ledgers.
 """
+import sys
+from pathlib import Path
+
+# Ensure project root is on sys.path
+_ROOT = Path(__file__).resolve().parent.parent.parent
+if str(_ROOT) not in sys.path:
+    sys.path.insert(0, str(_ROOT))
+
 from datetime import datetime, timezone
 from typing import Optional
 from uagents import Agent, Context, Protocol
